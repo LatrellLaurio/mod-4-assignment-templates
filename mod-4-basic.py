@@ -8,6 +8,7 @@ def savings(gross_pay, tax_rate, expenses):
     2 points.
     This function calculates the money remaining
         for an employee after taxes and expenses.
+
     To get the take-home pay of an employee, we will
         follow the following process:
         1. Apply the tax rate to the gross pay of the employee; round down
@@ -60,7 +61,7 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     material_consumed  = num_jobs * job_consumption
-    materials_remained = material_consumed - total_material
+    materials_remained =  total_material - material_consumed
     answer = str(materials_remained) + material_units
     return answer
 
@@ -87,8 +88,10 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    answer = int(principal * (rate * periods))
+    answer = int(principal * (rate * periods) + principal)
     return answer
+
+print(interest(200, 0.2, 2))
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -99,6 +102,7 @@ def body_mass_index(weight, height):
         (i.e., kilograms over meters squared)
     Unfortunately, the users of this function use the imperial system.
         You will need to first convert their arguments to the metric system.
+
     Parameters
     ----------
     weight: float
