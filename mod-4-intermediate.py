@@ -6,6 +6,7 @@ This assignment covers your intermediate proficiency with Python.
 def shift_letter(letter, shift):
     '''Shift Letter.
     4 points.
+
     Shift a letter right by the given number.
     Wrap the letter around if it reaches the end of the alphabet.
     Examples:
@@ -33,7 +34,7 @@ def shift_letter(letter, shift):
     if letter == " ":
         answer = " "
     else:
-        beyond_Z = (ord(letter) + shift - 64) % 26 + 64
+        beyond_Z = (ord(letter) + shift - 65) % 26 + 65
         answer = chr(beyond_Z)
     return answer
 
@@ -41,6 +42,7 @@ def shift_letter(letter, shift):
 def caesar_cipher(message, shift):
     '''Caesar Cipher.
     6 points.
+
     Apply a shift number to a string of uppercase English letters and spaces.
     Parameters
     ----------
@@ -60,7 +62,7 @@ def caesar_cipher(message, shift):
         if letter == " ":
             answer += " "
         else:
-            beyond_Z = (ord(letter) + shift - 64) % 26 + 64
+            beyond_Z = (ord(letter) + shift - 65) % 26 + 65
             answer += chr(beyond_Z)
     return answer
 
@@ -72,6 +74,7 @@ def caesar_cipher(message, shift):
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter.
     4 points.
+
     Shift a letter to the right using the number equivalent of another letter.
     The shift letter is any letter from A to Z, where A represents 0, B represents 1,
         ..., Z represents 25.
@@ -97,13 +100,14 @@ def shift_by_letter(letter, letter_shift):
     if letter == " ":
         answer += " "
     else:
-        beyond_Z = (ord(letter) + ord(letter_shift) - 65 - 64) % 26 + 64
+        beyond_Z = (ord(letter) + ord(letter_shift) - 65 - 65) % 26 + 65
         answer += chr(beyond_Z)
     return answer
 
 def vigenere_cipher(message, key):
     '''Vigenere Cipher.
     6 points.
+
     Encrypts a message using a keyphrase instead of a static number.
     Every letter in the message is shifted by the number represented by the
         respective letter in the key.
@@ -132,6 +136,6 @@ def vigenere_cipher(message, key):
         if message[i] == " ":
             answer += " "
         else:
-            beyond_Z = (ord(message[i]) + ord(key[i%len(key)]) - 65 - 64) % 26 + 64
+            beyond_Z = (ord(message[i]) + ord(key[i%len(key)]) - 65 - 65) % 26 + 65
             answer += chr(beyond_Z)
     return answer
